@@ -1,7 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = (env) => {
+module.exports = env => {
   const isProduction = !!env.WEBPACK_BUILD;
   return {
     mode: isProduction ? "production" : "development",
@@ -9,29 +9,29 @@ module.exports = (env) => {
     devtool: isProduction ? false : "inline-source-map",
     devServer: {
       static: ["src"],
-      watchFiles: ["src/**/*.*"],
+      watchFiles: ["src/**/*.*"]
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "./src/index.html",
-      }),
+        template: "./src/index.html"
+      })
     ],
     module: {
       rules: [
         {
           test: /\.html$/i,
-          loader: "html-loader",
+          loader: "html-loader"
         },
         {
           test: /\.css$/i,
-          use: ["style-loader", "css-loader"],
-        },
-      ],
+          use: ["style-loader", "css-loader"]
+        }
+      ]
     },
     output: {
       filename: "main.js",
       path: path.resolve(__dirname, "docs"),
-      publicPath: "",
-    },
+      publicPath: ""
+    }
   };
 };

@@ -1,1 +1,2 @@
-console.info("app ready");
+import "./style.css";
+console.warn("app ready");
