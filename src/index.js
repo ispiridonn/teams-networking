@@ -1,4 +1,18 @@
 import "./style.css";
+function creatTeamRequest() {
+  fetch("http://localhost:3000/teams-json/create", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      promotion: "WON3",
+      members: "Your Name",
+      name: "CV",
+      url: "https://github.com/nmatei/teams-networking"
+    })
+  });
+}
 
 function getTeamAsHTML(team) {
   return `<tr>
@@ -26,4 +40,16 @@ function loadTeams() {
     });
 }
 
+function onSubmit(e) {
+  e.preventDefault();
+  console.warn("pls save all values");
+  createTeamRequest();
+  window.location.reload();
+}
+
+function initEvents() {
+  document.querySelector("#teamsForm").addEventListener("submit", onSubmit);
+}
+
+initEvents();
 loadTeams();
