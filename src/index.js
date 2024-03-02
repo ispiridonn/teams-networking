@@ -6,7 +6,7 @@ function loadTeams() {
     .then(r => r.json())
     .then(teams => {
       console.table(teams);
-      return teams;
+      return promise;
     });
   console.warn("loadTeams", promise);
 }
