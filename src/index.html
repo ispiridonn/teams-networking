@@ -16,6 +16,7 @@
       <h2>CRUD operations example (Create, Read, Update, Delete)</h2>
     </header>
     <section>
+      <form action="secretary.html" method="get">
       <table id="teamsTable" border="1">
         <thead>
           <tr>
@@ -26,8 +27,28 @@
           </tr>
         </thead>
         <tbody></tbody>
-        <tfoot></tfoot>
+        <tfoot>
+          <tr>
+            <td>
+              <input type="text" name="promotion" id="promotion" placeholder="Enter promotion" required />
+            </td>
+            <td>
+              <input type="text" name="members" id="members" placeholder="Enter members" required />
+            </td>
+            <td>
+              <input type="text" name="name" id="name" placeholder="Enter name" required />
+            </td>
+            <td>
+              <input type="text" name="url" id="url" placeholder="Enter url" required />
+            </td>
+            <td>
+              <button type="submit">💾</button>
+              <button type="reset">❌</button>
+            </td>
+          </tr>
+        </tfoot>
       </table>
+    </form>
     </section>
     <footer>
       <a href="https://github.com/ispiridonn/teams-networking" target="_blank">👩‍💻Github</a>
