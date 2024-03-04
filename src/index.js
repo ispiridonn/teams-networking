@@ -24,7 +24,7 @@ function renderTeams(teams) {
   //console.warn("render", teams);
   const teamsHTML = teams.map(getTeamAsHTML);
   //console.info(teamsHTML);
-  document.querySelector("#teamsTable tbody").innerHTML = teamsHTML.join("");
+  $("#teamsTable tbody").innerHTML = teamsHTML.join("");
 }
 
 function loadTeams() {
@@ -35,12 +35,18 @@ function loadTeams() {
       return teams;
     });
 }
+
+function $(selector) {
+return document.querySelector(selector);
+}
+
+
 function getFormValues() {
   return {
-    promotion: document.getElementById("promotion").value,
-    members: document.querySelector("#members").value,
-    name: document.querySelector("input[name=name]").value,
-    url:document.querySelectorAll("input[name=url]")[0].value,
+    promotion: $("input[name=promotion]").value,
+    members: $("input[name=members]").value,
+    name: $("input[name=name]").value,
+    url:$("input[name=url]").value,
   }
 }
 
@@ -53,7 +59,7 @@ function onSubmit(e) {
 }
 
 function initEvents() {
-  document.querySelector("#teamsForm").addEventListener("submit", onSubmit);
+ $("#teamsForm").addEventListener("submit", onSubmit);
 }
 
 initEvents();
