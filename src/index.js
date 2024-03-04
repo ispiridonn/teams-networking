@@ -1,6 +1,6 @@
 import "./style.css";
 function creatTeamRequest(team) {
-  fetch("http://localhost:3000/teams-json/create", {
+  fetch("http://localhost:3000/teams-json/create", 
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -37,10 +37,10 @@ function loadTeams() {
 }
 function getFormValues() {
   return {
-    promotion: "WON3",
-    members: "Your name",
-    name: "CV",
-    url:"https://github.com/nmatei/teams-networking.git"
+    promotion: document.getElementById("promotion").value,
+    members: document.querySelector("#members").value,
+    name: document.querySelector("input[name=name]").value,
+    url:document.querySelectorAll("input[name=url]")[0].value,
   }
 }
 
