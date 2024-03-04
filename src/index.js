@@ -1,16 +1,12 @@
 import "./style.css";
-function creatTeamRequest() {
+function creatTeamRequest(team) {
   fetch("http://localhost:3000/teams-json/create", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({
-      promotion: "WON3",
-      members: "Your Name",
-      name: "CV",
-      url: "https://github.com/nmatei/teams-networking"
-    })
+    body: JSON.stringify()team{
+     
   });
 }
 
@@ -43,6 +39,12 @@ function loadTeams() {
 function onSubmit(e) {
   e.preventDefault();
   console.warn("pls save all values");
+  let team = {
+    promotion: "WON3",
+    members: "Your name",
+    name: "CV",
+    url:https://github.com/nmatei/teams-networking.git
+  }
   createTeamRequest();
   window.location.reload();
 }
