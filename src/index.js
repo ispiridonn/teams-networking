@@ -28,7 +28,7 @@ function getTeamAsHTML(team) {
   <td>${team.name}</td>
   <td>${team.url}</td>
   <td>
-    <a href ="#" onclik="deleteTeamRequest(${"team.id"})">✖</a>
+    <a href ="#" onclick="deleteTeamRequest(${"team.id"})">✖</a>
   </td>
 </tr>`;
 }
