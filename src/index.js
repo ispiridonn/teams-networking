@@ -60,7 +60,8 @@ function loadTeams() {
     });
 }
 
-let allTeams = []
+let allTeams = [];
+let editId;
 
 function $(selector) {
 return document.querySelector(selector);
@@ -89,11 +90,18 @@ function onSubmit(e) {
   e.preventDefault();
   console.warn("pls save all values");
   let team = getFormValues();
-  createTeamRequest();
+  if (editId) {
+    team.id = editId;
+    updateTeamRequest(team);
+  } else {
+    createTeamRequest();
+  }
+  
   window.location.reload();
 }
 
 function startEdit(id) {
+  editId = id;
   const team = allTeams.find((team) => { 
     return id === team.id;
    });
@@ -109,7 +117,7 @@ function initEvents() {
     deleteTeamRequest(id);
     window.location.reload();
   } else if ( e.target.matches("a.edit-btn")) {
-    e.preventDefault()''
+    e.preventDefault();
    // const id= e.target.getAttributes("data-id");
    const id= e.target.dataset.id;
    startEdit(id);
