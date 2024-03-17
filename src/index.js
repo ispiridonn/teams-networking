@@ -79,7 +79,7 @@ function initEvents() {
     deleteTeamRequest(id);
     window.location.reload();
   }
- })
+})
 }
 
 initEvents();
